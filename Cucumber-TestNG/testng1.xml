@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite  name="TestAutomation" >
+  <test name="TestOne" parallel="classes" thread-count="2" >
+    <classes>
+      <class name="ParallelTest.Methodsparallel"/>
+      <class name="ParallelTest.MethodsParalleltwo"/>
+    </classes>
+  </test> 
+</suite> 
+<!-- group-by-instances="true" -->

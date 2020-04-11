@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestAutomation" parallel="false" thread-count="2">
+<!--   <test name="TestOne">
+  
+  <groups>
+    <run>
+      <include name="functest"/>
+    </run>
+  </groups>
+  
+  
+    <classes>
+      <class name="TestNGSampleTest.TestSampleGroups"/>
+      <class name="MyRunner.TestRunner"/>
+    </classes>
+  </test> Test
+   -->
+  
+  
+  <test name="TestTwo">
+  
+    <classes>
+       <class name="TestNGSampleTest.NewTest"/> 
+    </classes>
+  </test> <!-- Test -->
+  
+  
+</suite> <!-- Suite -->
