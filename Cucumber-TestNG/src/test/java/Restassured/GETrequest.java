@@ -1,15 +1,18 @@
 package Restassured;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.json.simple.JSONObject;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
+import static org.hamcrest.CoreMatchers.equalTo;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
 public class GETrequest {
@@ -36,12 +39,16 @@ public class GETrequest {
 		 
 		 RestAssured.baseURI = "https://reqres.in";
 		 RequestSpecification httpRequest = RestAssured.given();
+		/* ValidatableResponse response = httpRequest.get("/api/users?page=2").then()
+				                        .assertThat().body("data.id[0]", equalTo(8)).log().all();*/
+		 
 		 Response response = httpRequest.get("/api/users?page=2");
 		 
-		 String responseBody = response.getBody().prettyPrint();
+		 response.getBody().prettyPrint();
 		 
 		 Object obj = response.jsonPath().getJsonObject("ad");
 		 System.out.println(obj);
+		 
 		 Gson g= new GsonBuilder().setPrettyPrinting().create();
 		 System.out.println(g.toJson(obj));
 		 
@@ -51,7 +58,16 @@ public class GETrequest {
 			 System.out.println(li);
 		 }
 		 
+		 List<HashMap<String,Object>>booksList=response.jsonPath().getList("data");
+		 
+		//Now parse value from List
+		HashMap<String,Object> firstBookDetails=booksList.get(0);
 		
+		//Map<String,String> map =  response.jsonPath().getMap("data.email");
+		
+		for(Map.Entry<String,Object> entry : firstBookDetails.entrySet()){
+			System.out.println("KEY : "+entry.getKey() +"   VALUE : "+entry.getValue());
+		}
 		 
 
 	}
