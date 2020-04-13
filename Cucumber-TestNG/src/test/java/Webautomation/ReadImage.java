@@ -12,14 +12,14 @@ public class ReadImage {
 		
 		ITesseract tesseract = new Tesseract(); 
         try { 
-        	File file = new File("C:\\Selenium_Workspace\\Cucumber-TestNG\\tessdata\\proxy.png");
+        /*	File file = new File("C:\\Selenium_Workspace\\Cucumber-TestNG\\tessdata\\proxy.png");
         			if (file.exists()) {
         			  System.out.println("File Exists");
         			}
-        	
+        	*/
             tesseract.setDatapath("C:\\Selenium_Workspace\\Cucumber-TestNG\\tessdata"); 
   
-            String text  = tesseract.doOCR(new File("C:\\Selenium_Workspace\\Cucumber-TestNG\\tessdata\\proxy.png")); 
+            String text  = tesseract.doOCR(new File("C:\\Selenium_Workspace\\Cucumber-TestNG\\tessdata\\plain.PNG")); 
   
             // path of your image file 
             System.out.print(text); 
