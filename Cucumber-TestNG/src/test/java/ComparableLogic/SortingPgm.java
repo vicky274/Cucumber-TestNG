@@ -20,7 +20,8 @@ public class SortingPgm {
 		      * Comparable interface in our user defined class Author       
 		      */      
 		     System.out.println(">>>>>>>>>>>>Sorting by Author First Name:"+"\n");      
-		     Collections.sort(al);        
+		     Collections.sort(al);
+		   
 		     for(Author au: al){       
 		       System.out.println(au.getFirstName()+" | "+au.getBookName()+" | "+
 		           au.getAuAge());        

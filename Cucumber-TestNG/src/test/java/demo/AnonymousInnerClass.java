@@ -44,7 +44,7 @@ public class AnonymousInnerClass {
 		list.add(66);
 		list.add(22);
 		
-		
+		//(x%10>y%10)?-1:(x%10==y%10)?0:1;
 		
 		Comparator<Integer> com=(x,y)-> {
 			

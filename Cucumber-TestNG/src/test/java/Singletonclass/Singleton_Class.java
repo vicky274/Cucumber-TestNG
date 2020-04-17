@@ -2,6 +2,7 @@ package Singletonclass;
 
 public class Singleton_Class {
 
+	
 	public static void main(String[] args) {
 		 
 		 
@@ -11,7 +12,7 @@ public class Singleton_Class {
 
 class Single_Design{
 	
-	private static  Single_Design Single_Design;
+	private static Single_Design Single_Design;
 	
 	
 	private Single_Design() {
