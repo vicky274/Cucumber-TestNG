@@ -46,11 +46,13 @@ static WebDriver driver;
 		list.addAll(Arrays.asList("Manual Testing","Database Testing","Automation Testing"
 				,"Performance Testing","TextBox","TextBox","Automation Testing","Performance Testing"));
 
-		/*
-		System.out.println(list.stream().distinct().collect(Collectors.toList()));
-		System.out.println(list.stream().filter(e -> Collections.frequency(list, e)>1).distinct().collect(Collectors.toList()));
 		
-		List<String> duplicate = new ArrayList<String>();
+		System.out.println(list.stream().distinct()
+				.collect(Collectors.toList()));
+		System.out.println(list.stream().filter(e -> Collections.frequency(list, e)>1)
+				.distinct().collect(Collectors.toList()));
+		
+		/*List<String> duplicate = new ArrayList<String>();
 		Set<String>  set = new HashSet<String>(list);
 		
 		for(int i=0; i<list.size();i++) {
