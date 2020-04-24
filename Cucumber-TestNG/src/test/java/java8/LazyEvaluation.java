@@ -9,11 +9,10 @@ public class LazyEvaluation {
 
 	public static void main(String[] args) {
 		
-List<Integer> values = Arrays.asList(12,25,34,45,52,65);
+        List<Integer> values = Arrays.asList(12,25,34,45,52,65);
 
-		
 		Optional<Integer> val= values.stream().filter(LazyEvaluation::filterit).map(LazyEvaluation::Doubleit).findFirst();
-		System.out.println(val);
+		System.out.println(val);	
 	}
 
 	public static boolean filterit(Integer i){
@@ -22,11 +21,12 @@ List<Integer> values = Arrays.asList(12,25,34,45,52,65);
 		return i%5==0;
 		
 	}
-	
+
 public static int Doubleit(Integer i){
 		
 	System.out.println("multiply :"+i);
 		return i*2;
 		
-	}
+}
+
 }
