@@ -47,6 +47,10 @@ static WebDriver driver;
 				,"Performance Testing","TextBox","TextBox","Automation Testing","Performance Testing"));
 
 		
+		//collect -Performs a mutable reduction operation on the elements of this stream using a Collector.
+		//A Collector encapsulates the functions used as arguments to collect(Supplier, BiConsumer, BiConsumer), allowing for reuse of collection 
+		//strategies and composition of collect operations such as multiple-level grouping or partitioning. 
+		
 		System.out.println(list.stream().distinct()
 				.collect(Collectors.toList()));
 		System.out.println(list.stream().filter(e -> Collections.frequency(list, e)>1)
