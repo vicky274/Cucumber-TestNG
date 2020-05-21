@@ -2,6 +2,7 @@ package java8;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 
 public class PredicateinFilter {
@@ -28,6 +29,15 @@ public class PredicateinFilter {
 		Integer val= values.stream().filter(p).reduce(0,(c,e) -> (c+e));
 		System.out.println(val);
 		
+		Integer val1= values.stream().filter(p).reduce(0, new BinaryOperator<Integer>() {
+
+			@Override
+			public Integer apply(Integer t, Integer u) {
+				
+				return t+u;
+			}
+		});
+		System.out.println(val1);
 		//lamda expression
 		
 		//System.out.println(values.stream().filter(i -> (i%5==0)).reduce(0,(c,e) -> (c+e)));
