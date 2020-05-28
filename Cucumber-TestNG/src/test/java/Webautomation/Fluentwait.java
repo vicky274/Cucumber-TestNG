@@ -60,12 +60,28 @@ public class Fluentwait {
 
          wait.until((input) ->{return driver.findElement(By.xpath("//p[@id='demo']"));});
          
-         long t2=System.currentTimeMillis();
+         /*long t2=System.currentTimeMillis();
          long t3=t2-t1;
-         System.out.println("Element Found : "+t3);
+         System.out.println("Element Found : "+t3);*/
 		
 		
-		
+
+ 		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+ 			       .withTimeout(Duration.ofSeconds(10))
+ 			       .pollingEvery(Duration.ofSeconds(500))
+ 			       .ignoring(NoSuchElementException.class);
+ 		
+ 		Function<WebDriver,WebElement> func = new Function<WebDriver,WebElement>(){
+
+ 			@Override
+ 			public WebElement apply(WebDriver driver) {
+ 				
+ 				return driver.findElement(By.xpath("//p[@id='demo']"));
+ 			}
+ 			
+ 		};
+ 		
+ 		wait.until(func);*/
 	}
 
 }

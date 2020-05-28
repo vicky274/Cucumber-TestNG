@@ -9,6 +9,10 @@ interface demo {
 		System.out.println("implemented interface get method");
 	}
 	
+public static  void abc(){
+	System.out.println("static method in interface");
+}
+
 
 }
 
@@ -34,13 +38,13 @@ public class Check implements demo{
 			
 			
 		};
+		/*
+		d.show();
+		d.get();*/
 		
-		//d.show();
-		//d.get();
-		
-		Check o = new Check();
+		/*Check o = new Check();
 		o.show();
-		o.get();
+		o.get();*/
 
 	}
 
