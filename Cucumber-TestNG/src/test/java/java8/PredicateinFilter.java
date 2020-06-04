@@ -26,7 +26,13 @@ public class PredicateinFilter {
 			
 			
 				};
-		Integer val= values.stream().filter(p).reduce(0,(c,e) -> (c+e));
+				
+				/**
+				 * Sum, min, max, average, and string concatenation are all special cases of reduction. 
+				 * Summing a stream of numbers can be expressed as: Integer sum = integers.reduce(0, (a, b) -> a+b);
+
+				 */
+		Integer val= values.stream().filter(p).reduce(10,(c,e) -> (c+e));
 		System.out.println(val);
 		
 		Integer val1= values.stream().filter(p).reduce(0, new BinaryOperator<Integer>() {

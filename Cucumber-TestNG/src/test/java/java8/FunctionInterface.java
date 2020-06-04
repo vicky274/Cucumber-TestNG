@@ -1,6 +1,8 @@
 package java8;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Function;
 
@@ -56,6 +58,13 @@ public class FunctionInterface {
 		int s = func.andThen(func1).apply("vignesh");
 		System.out.println(s);
 		
+		
+		
+		List<String> list = new ArrayList<String>();
+		list.add("vignesh");
+		list.add("deepa");
+		
+		list.stream().map(x-> x.toString()).forEach(System.out::println);
 	}
 
 }

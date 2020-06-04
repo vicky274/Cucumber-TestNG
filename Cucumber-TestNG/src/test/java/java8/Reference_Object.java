@@ -30,6 +30,9 @@ public class Reference_Object extends A implements inter{
 		
 	}
 	
+	public void GET(){
+		System.out.println("get method in class Reference");
+	}
 	
 	public void show(){
 		System.out.println("show method in class Reference");
@@ -41,7 +44,10 @@ public class Reference_Object extends A implements inter{
 		A o = new Reference_Object();
 		o.sound();
 		o.GET();
-
+		
+		
+		Reference_Object r = new Reference_Object();
+		r.GET();
 	}
 
 }

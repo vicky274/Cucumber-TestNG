@@ -2,6 +2,7 @@ package ComparableLogic;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class SortingPgm {
 
@@ -40,7 +41,20 @@ public class SortingPgm {
 		        System.out.println(au.getFirstName()+" | "+au.getBookName()+" | "+ 
 		           au.getAuAge());       
 		     }    
-		  }  
+		     
+		     //using anonymous class
+		     System.out.println(">>>>>>>>>>>>>Sorting by Book Name using Anonymous class:"+"\n");      
+		     Collections.sort(al, new Comparator<Author>(){
+		    
+				@Override
+				public int compare(Author o1, Author o2) {
+				
+					return (o1.getBookName()).compareTo(o2.getBookName());
+				}
+			}); 
+		     
+		     al.forEach(n -> System.out.println(n.getFirstName()+" | "+n.getBookName()+" | "+ n.getAuAge()));
+		  
 	
-
+	}  
 }

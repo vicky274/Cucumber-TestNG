@@ -40,6 +40,9 @@ public class Regexdemo {
         //regex to match email id
         String email="vimessidkefkf2367@gmail.com";
         System.out.println(email.matches("\\D+\\d*\\@\\D+\\.\\D{3}"));
+        
+        
+     
 	}
 
 }

@@ -1,6 +1,8 @@
 package demo;
 
-class StudentData{  
+class StudentData{ 
+	
+	//final restricts modification: variables become constant, methods can't be overridden, and classes can't be inherited.
 	    final int ROLL_NO=100;
 		
 	   /*StudentData(int rnum){

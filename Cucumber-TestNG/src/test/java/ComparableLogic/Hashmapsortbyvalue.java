@@ -1,5 +1,6 @@
 package ComparableLogic;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -7,6 +8,8 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 
 public class Hashmapsortbyvalue {
 
@@ -50,13 +53,40 @@ public class Hashmapsortbyvalue {
         hm.put("Jack", 80); 
        
         Map<String, Integer> hm1 = sortByValue(hm); 
-  
+        
         // print the sorted hashmap 
         for (Map.Entry<String, Integer> en : hm1.entrySet()) { 
         	
             System.out.println("Key = " + en.getKey() +  
                           ", Value = " + en.getValue()); 
         } 
+        
+        
+        //java 8 Comparator.reverseOrder()
+        List<Integer> list = new ArrayList<Integer>();
+        
+       for (Map.Entry<String, Integer> en : hm1.entrySet()) { 
+	        list.add(en.getValue());
+        } 
+        list.stream().sorted((o1,o2)->  o1.compareTo(02)).forEach(System.out::println);
+
+        Map<String, Integer> sorted = hm
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2,
+                        LinkedHashMap::new));
+
+            System.out.println("map after sorting by values: ");
+           sorted.forEach(new BiConsumer<String, Integer>(){
+
+					@Override
+					public void accept(String t, Integer u) {
+						System.out.println(t + ":" + u);
+						
+					}
+		});
+        //hm.entrySet().stream().map(x->x.getValue()).filter().forEach(System.out::println);
     } 
 } 
 
