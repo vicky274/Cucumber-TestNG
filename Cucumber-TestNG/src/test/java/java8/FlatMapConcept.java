@@ -56,7 +56,6 @@ public class FlatMapConcept {
 		
 		/*Map<String, List<FlatmapPojo>> map = new HashMap<String, List<FlatmapPojo>>();
 		map.put("map", list);
-		
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		System.out.println(gson.toJson(map));*/
 		
@@ -69,9 +68,8 @@ public class FlatMapConcept {
 		
 		
 		//for primitive type  use flatmaptoint Method
-		int a[] ={1,2,3,4,5,6};
-		Stream<int[]>  datastream = Stream.of(a);
-		
+		int[] a ={1,2,3,4,5,6};
+		Stream<int[]>  datastream = Stream.of(a);	
 		IntStream filterdata  =datastream.flatMapToInt(x-> Arrays.stream(x)).distinct();
 		
 		filterdata.forEach(System.out::println);

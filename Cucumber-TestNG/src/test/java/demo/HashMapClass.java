@@ -10,6 +10,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import com.google.common.collect.Multiset.Entry;
 
@@ -19,29 +21,48 @@ import ComparableLogic.AuthorAgeComparator;
 public class HashMapClass {
 
 	public static void main(String[] args) {
-		
-		
-		/* Map<String, Integer> unsortMap = new HashMap<>();
-	        unsortMap.put("z", 10);
-	        unsortMap.put("b", 5);
-	        unsortMap.put("a", 6);
-	        unsortMap.put("c", 20);
-	        unsortMap.put("d", 1);
-	        unsortMap.put("e", 7);
-	        unsortMap.put("y", 8);
-	        unsortMap.put("n", 99);
-	        unsortMap.put("g", 50);
-	        unsortMap.put("m", 2);
-	        unsortMap.put("f", 9);
+		//hashmap
+	/*	1 no order
+		2 unsunchronized
+		3 key value pair
+		4 allow  single null key and multiple null value*/
+		 Map<String, Integer> map = new TreeMap<>(); //natural order
+		  map.put("fire", 10);
+		  map.put("land", 5);
+		  map.put("air", 6);
+		  map.put("space", 20);
+		  
+		  System.out.println("---------tree map--------------");
+		  map.forEach((t,u) -> System.out.println(t +" " +u));
+		  map.entrySet().stream().map(x-> x.getValue()).sorted((t,u) -> t>u?-1:1).forEach(System.out::println);
+		  
+		  
+		  
+		  
+		  
+		  
+		  //---------------------------------------------------------------------------------------------//
+		 Map<String, Integer> unsortMap = new HashMap<>();
+	        unsortMap.put("fire", 10);
+	        unsortMap.put("land", 5);
+	        unsortMap.put("air", 6);
+	        unsortMap.put("space", 20);
+	        unsortMap.put("water", 1);
+	        unsortMap.put("avathar", 7);
+	        unsortMap.put("tony", 8);
+	        unsortMap.put("scarlet", 99);
+	        unsortMap.put("ironman", 50);
+	        unsortMap.put("captain", 2);
+	        unsortMap.put("thor", 9);
 	        
-	     System.out.println("Unsort Map");
+	     System.out.println("--------------Unsort Map-------------");
 	     System.out.println(unsortMap);
 	    
 	     LinkedHashMap<String, Integer> result = unsortMap.entrySet().stream()
 	            .sorted(Map.Entry.comparingByKey())
 	            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,(e1, e2) -> e1, LinkedHashMap::new));
 	     
-	     System.out.println("Sorted Key...");
+	     System.out.println("-------------Sorted Key--------------");
 		 System.out.println(result);
 
 	     //sort by values, and reserve it, 10,9,8,7,6...
@@ -51,10 +72,10 @@ public class HashMapClass {
 	                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 
 			
-	        System.out.println("Sorted Value...");
+	        System.out.println("----------------Sorted Value------------");
 	        System.out.println(result1);
-	        */
 	        
+	       /* 
 	        HashMap<String, String> hmap = new HashMap<String, String>();
 	        hmap.put("1", "Naveen");
 	        hmap.put("2", "Santosh");
@@ -62,56 +83,16 @@ public class HashMapClass {
 	        hmap.put("4", "Pramod");
 	        hmap.put("5", "Zuck");
 	        hmap.put("6", "Abhi");
-	       
-	       /* hmap.put("Naveen", "10");
-	        hmap.put("Ravi", "5");
-	        hmap.put("zuck", "6");
-	        hmap.put("Pramod", "20");
-	        hmap.put("abhi", "1");
-	 */
-	        List list = new LinkedList(hmap.entrySet());
-	       // HashMap<String, String> map = sortByValues(hmap); 
-	        Collections.sort(list, new HashmapComparator());
-	        System.out.println("After Sorting:");
-	        
+	 
 	        for (java.util.Map.Entry<String, String> entry : hmap.entrySet()) 
 	        {
 	             System.out.print(entry.getKey() + ": ");
 	             System.out.println(entry.getValue());
 	        }
-	        
+	        */
 	        
 
 	        
 	}
 
-	//******************************sorting hashmap by values***************************
-	/*private static HashMap<String, String> sortByValues(HashMap<String, String> map) { 
-		
-        List list = new LinkedList(map.entrySet());
-        // Defined Custom Comparator here
-        Collections.sort(list, new Comparator() {
-             public int compare(Object o1, Object o2) 
-             {
-                return ((Comparable) ((Map.Entry) (o1)).getValue())
-                   .compareTo(((Map.Entry) (o2)).getValue());
-                
-        
-             }
-             
-            
-
-        });
-
-        // Here I am copying the sorted list in HashMap
-        // using LinkedHashMap to preserve the insertion order
-        HashMap<String, String>  sortedHashMap = new LinkedHashMap<String, String> ();
-        
-        for (Iterator it = list.iterator(); it.hasNext();) 
-        {
-               Map.Entry<String, String> entry = (Map.Entry<String, String>) it.next();
-               sortedHashMap.put(entry.getKey(), entry.getValue());
-        } 
-        return sortedHashMap;
-   }*/
 }

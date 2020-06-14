@@ -1,5 +1,12 @@
 package Enum;
-
+/**
+ * 
+ * An enum is a special type of data type which is basically a collection (set) of constants.
+ * Every enum constant represents an object of type enum.
+   enum type can be passed as an argument to switch statement
+ * @author FreaKy ThrEE
+ *
+ */
 //THIS IS WHAT HAPPENING INSIDE WHEN WE CREATE CONSTANT IN ENUM
 /*class Mobile{
 	static final APPLE = new Mobile();
@@ -43,7 +50,7 @@ public class Enum {
 		}*/
 		
 		//System.out.println(Mobile.APPLE.getprice());
-
+        System.out.println(Mobile.valueOf("APPLE"));
 		Mobile[] val = Mobile.values();
 		
 		for(Mobile m:val){

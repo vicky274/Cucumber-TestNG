@@ -3,7 +3,8 @@ package demo;
 public class staticInnerClass {
 /**
  * We can instantiate a static inner class with reflection using InnerClass.class.newInstance(). If we 
- * need an instance of the outer class to instantiate a non-static inner class, we can specify it before a new operator.
+ * need an instance of the outer class to instantiate a non-static inner class, 
+ * we can specify it before a new operator.
  * @param args
  * 
  *

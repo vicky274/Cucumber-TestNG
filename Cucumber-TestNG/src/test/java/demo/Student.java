@@ -29,17 +29,27 @@ public class Student implements Comparable<Student>{
 	@Override
 	public int compareTo(Student o) {
 		
-		/*System.out.println(o.getStudentage());
-		System.out.println(this.studentage-o.getStudentage());
+		//System.out.println(o.getStudentage());
+		//System.out.println(this.studentage-o.getStudentage());
 		
-		return this.studentage-o.getStudentage();*/
-		   String StudentName = o.getStudentname().toLowerCase();
+		//return this.studentage-o.getStudentage();
+		   String StudentName = o.getStudentname();
 		  
 
 		   //ascending order
 		   return this.studentname.compareTo(StudentName);
 		
 	}
+	
+	//sort by age
+	/*@Override
+	public int compareTo(Student o) {
+		int b=this.studentage;
+		int a=o.getStudentage();
+		
+		   return b>a?1:b<a?-1:0;
+		
+	}*/
 	
 	@Override
 	public String toString() {

@@ -1,7 +1,13 @@
 package demo;
 
 import java.util.ArrayList;
-
+ /**
+  * 
+  * Generics also provide compile-time type safety that allows programmers to catch invalid types at compile time.
+  * @author FreaKy ThrEE
+  *
+  * @param <T>
+  */
 class Generics<T> {
 
 	T value;

@@ -4,6 +4,8 @@ package Customer;
  * A final method in a superclass cannot be overridden in a subclass—this guarantees that the final method implementation will be used by all direct and indirect subclasses in the hierarchy. 
  * Methods that are declared private are implicitly final , because it's not possible to override them in a subclass.
  * @author FreaKy ThrEE
+ * 
+ * **That shows that final methods are (INHERITED) but they are not eligible for overriding.
  *
  */
 
