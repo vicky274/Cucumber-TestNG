@@ -71,6 +71,20 @@ public class Stringformat {
 		//unescape html code - commons-lang.jar
 		String unescaped = StringEscapeUtils.unescapeHtml("address1 189, &lt;12334&gt;");
 		System.out.println(unescaped);
+		
+		
+		//just replace the slash and get escaped value
+String str="";
+		String myString = "\u0027\u0028\u0030 World";
+	
+		str = myString.replace("\\","");
+		System.out.println("String is :"+str);
+		
+		
+		
+		System.out.println(StringEscapeUtils.unescapeJava("\\u0027"));
+		
+		
         
 	}
 

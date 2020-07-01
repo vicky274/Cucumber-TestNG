@@ -11,6 +11,8 @@ import com.google.gson.GsonBuilder;
 import static org.hamcrest.CoreMatchers.equalTo;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
+import io.restassured.path.json.JsonPath;
+import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -39,9 +41,10 @@ public class GETrequest {
 		 
 		 RestAssured.baseURI = "https://reqres.in";
 		 RequestSpecification httpRequest = RestAssured.given();
-		/* ValidatableResponse response = httpRequest.get("/api/users?page=2").then()
-				                        .assertThat().body("data.id[0]", equalTo(8)).log().all();*/
 		 
+		/* ValidatableResponse response1 = httpRequest.get("/api/users?page=2").then()
+				                        .assertThat().body("data.id[0]", equalTo(7)).log().all();*/
+	
 		 Response response = httpRequest.get("/api/users?page=2");
 		 
 		 response.getBody().prettyPrint();
@@ -57,7 +60,7 @@ public class GETrequest {
 		 for(String li : list){
 			 System.out.println(li);
 		 }
-		 
+		
 		 List<HashMap<String,Object>>booksList=response.jsonPath().getList("data");
 		 
 		//Now parse value from List
@@ -67,7 +70,7 @@ public class GETrequest {
 		
 		for(Map.Entry<String,Object> entry : firstBookDetails.entrySet()){
 			System.out.println("KEY : "+entry.getKey() +"   VALUE : "+entry.getValue());
-		}
+		};
 		 
 
 	}

@@ -1,0 +1,25 @@
+{
+    "state": "open",
+    "throughput": 320.0,
+    "id": "abfg-3432-gft5",
+    "name": "Big Leap",
+    "description": "Take a leap into the unknown on this scary roller coaster",
+"info": {
+      "visible.restrictions.min_height": "130cm",
+      "visible.restrictions.min_accompanied_height": "100cm"
+    }
+ "weather": [
+ {
+ "id": 300,
+ "main": "Drizzle",
+ "description": "light intensity drizzle",
+ "icon": "09d"
+ }
+ ],
+ "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "bs": "harness real-time e-markets"
+    }
+    
+  }
