@@ -62,14 +62,17 @@ public class ReadFileUsingDifferentways {
 			e.printStackTrace();
 		}
 		
-		//------------
+		/*String str= "This#string%contains^special*characters&.";   
+		str = str.replaceAll("\\W+", " ");  
+		System.out.println(str);  */
 		
+		//------------
+		System.out.println("----------------Scanner-------------------------");
 		Scanner scan1;
 		try {
 			scan1 = new Scanner(file);
-			
 			while(scan1.hasNext("\\W+")){
-				System.out.print(scan1.next());
+				System.out.println(scan1.next());
 			}
 		} catch (Exception e) {
 			

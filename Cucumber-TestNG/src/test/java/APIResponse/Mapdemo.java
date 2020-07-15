@@ -49,7 +49,7 @@ public class Mapdemo {
         System.out.println(json);*/
 		
         //2.Java object to JSON by using toJson()
-		Address Address = new Address();
+		/*Address Address = new Address();
 		Address.setCountry("india");
 		Address.setStreet("williams street");
 		Address.setPincode("603103");
@@ -59,7 +59,7 @@ public class Mapdemo {
 	
 		Gson g =new Gson();
         String str = g.toJson(list);
-        System.out.println(str);
+        System.out.println(str);*/
       
         //3. jsonString to JSONObject in Java using Gson
        /* JsonObject obj = new JsonParser().parse(payload).getAsJsonObject();
@@ -102,7 +102,7 @@ public class Mapdemo {
 		  }
 		]
 */
-/*		List<Object> list1 = new ArrayList<Object>();
+		List<Object> list1 = new ArrayList<Object>();
 		
 		Address Address = new Address();
 		Address.setCountry("india");
@@ -122,7 +122,7 @@ public class Mapdemo {
 	     
 	     Gson gson1 = new GsonBuilder().setPrettyPrinting().create();
 	     String jsonOutput = gson1.toJson(list1);
-	     System.out.println(jsonOutput);*/
+	     System.out.println(jsonOutput);
 	      
 	}
 

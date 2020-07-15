@@ -53,9 +53,23 @@ public class AnonymousInnerClass {
 		};
 			
 		Collections.sort(list,com);
+		//Collections.reverse(list);
 		
-		list.forEach(System.out::println);
+		//list.forEach(System.out::println);
 
+		
+		
+		//---------------------------------------------------------------------------------------------
+        List<Integer> list1 = new ArrayList<Integer>();
+		
+        list1.add(99);
+        list1.add(88);
+        list1.add(55);
+        list1.add(66);
+        list1.add(22);
+		
+		Collections.sort(list1,Collections.reverseOrder());
+		list1.forEach(System.out::println);
 	}
 
 }

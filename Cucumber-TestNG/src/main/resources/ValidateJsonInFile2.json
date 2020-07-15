@@ -1,0 +1,22 @@
+{
+ "weather": [
+ {
+ "id": 1,
+ "main": "Drizzle",
+ "description": "light intensity drizzle",
+ "icon": "09d"
+ },
+ {
+ "id": 2,
+ "main": "Sunny",
+ "description": "light intensity drizzle",
+ "icon": "09d"
+ },
+ {
+ "id": 3,
+ "main": "Cloudy",
+ "description": "light intensity drizzle",
+ "icon": "09d"
+ }
+ ]
+  }

@@ -27,10 +27,13 @@ public class SequentialStream {
           //IntStream  number = stream1.flatMapToInt(x-> Arrays.stream(x)).filter(x-> (x%2)==0);
           //number.forEach(System.out::println);
           
-          //String
-         // String[] s = new String[]{"a1","a2","a3"};
-         // Arrays.stream(s).map(x->x.substring(1)).mapToInt(Integer::parseInt).max().ifPresent(System.out::println);
+          /*//String
+          String[] s = new String[]{"a1","a2","a3"};
+          Arrays.stream(s).map(x->x.substring(1)).mapToInt(Integer::parseInt).max().ifPresent(System.out::println);*/
           
+          int[]  a1 = new int[]{1,2,3,4,5};
+          IntStream str1 = Arrays.stream(a1);
+          str1.max().ifPresent(System.out::println);
         /*  //INSTREAM
           IntStream.range(1, 6).forEach(System.out::println);
           
@@ -43,7 +46,7 @@ public class SequentialStream {
           //iterate limit
           //Stream.iterate(0, n -> n+1).limit(10).forEach(System.out::println);
           
-          Stream.iterate(0, n -> n+1).limit(20).filter(x -> (x%2)==1).forEach(System.out::println);
+          //Stream.iterate(0, n -> n+1).limit(20).filter(x -> (x%2)==1).forEach(System.out::println);
 	}
 
 }

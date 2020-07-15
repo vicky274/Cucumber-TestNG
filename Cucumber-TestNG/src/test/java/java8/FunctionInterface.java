@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -63,8 +64,13 @@ public class FunctionInterface {
 		List<String> list = new ArrayList<String>();
 		list.add("vignesh");
 		list.add("deepa");
-		
+		list.add("anjal");
+		list.add("leo");
 		list.stream().map(x-> x.toString()).forEach(System.out::println);
+		
+		//add name at last for every string
+		list.stream().map(x-> x.concat(" : Name")).collect(Collectors.toList()).forEach(System.out::println);
+		
 	}
 
 }

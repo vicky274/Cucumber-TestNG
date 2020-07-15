@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.function.Consumer;
 
 public class Collections_Arraylist {
 
@@ -35,7 +37,28 @@ public class Collections_Arraylist {
 			System.out.println(str.toString());
 		}
 		
+		System.out.println("-----------------------Sorting by Age-----------------------------------");
+		Collections.sort(arraylist, new Comparator<Student>() {
+
+			@Override
+			public int compare(Student o1, Student o2) 
+			{
+				
+				return (o1.getStudentage()>o2.getStudentage()?-1:o1.getStudentage()==o2.getStudentage()?0:1);
+			}
+			
+		});
 		
+		arraylist.forEach(new Consumer<Student>() {
+
+			@Override
+			public void accept(Student t) {
+				System.out.println(t);
+				
+			}
+		});
+		System.out.println("-----------------------Java 8-----------------------------------");
+		arraylist.stream().map(x-> x.getStudentname()).distinct().forEach(System.out::println);
 	}
 
 }

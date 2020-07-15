@@ -41,7 +41,6 @@ public class SortingPgm {
 		        System.out.println(au.getFirstName()+" | "+au.getBookName()+" | "+ 
 		           au.getAuAge());       
 		     }    
-		     
 		     //using anonymous class
 		     System.out.println(">>>>>>>>>>>>>Sorting by Book Name using Anonymous class:"+"\n");      
 		     Collections.sort(al, new Comparator<Author>(){

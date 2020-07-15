@@ -13,6 +13,8 @@ import com.google.gson.JsonObject;
 
 public class ValidateJsonInFile {
 
+	static JSONParser jsonParser = new JSONParser();
+	
 	public static void main(String[] args) {
 		
 		/*[
@@ -39,8 +41,7 @@ public class ValidateJsonInFile {
 		  }
 		]*/
 		
-		/*JSONParser jsonParser = new JSONParser();
-        
+        //need to add square bracket for this scenario in file
         try (FileReader reader = new FileReader("./src/main/resources/ValidateJsonInFile.json"))
         {
         	Gson gso = new GsonBuilder().setPrettyPrinting().create();
@@ -56,8 +57,7 @@ public class ValidateJsonInFile {
             	JSONArray employeeList = (JSONArray) obj;
             	String jsonOutput = gso.toJson(employeeList);
                 System.out.println("JsonArray :\n"+jsonOutput);
-                
-                System.out.println(gso.toJson(employeeList.get(0)));
+                System.out.println("JsonObject inside Array :\n" +gso.toJson(employeeList.get(0)));
                
                 
             }
@@ -65,7 +65,7 @@ public class ValidateJsonInFile {
         }  
         catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
         
         //*********************************************************************************************************************
         
@@ -93,9 +93,9 @@ public class ValidateJsonInFile {
 		    }
 		}
 		*/
-		JSONParser jsonParser = new JSONParser();
+		
         
-        try (FileReader reader = new FileReader("./src/main/resources/ValidateJsonInFile.json"))
+ /*       try (FileReader reader = new FileReader("./src/main/resources/ValidateJsonInFile.json"))
         {
         	Gson gso = new GsonBuilder().setPrettyPrinting().create();
             //Read JSON file
@@ -103,21 +103,16 @@ public class ValidateJsonInFile {
  
             if(obj instanceof JSONObject){
             	
-            	
             JSONObject JSONObject = (JSONObject)obj;
             String jsonOutput = gso.toJson(JSONObject);
             System.out.println(jsonOutput);
            
-            
             }
-            
-        
-           
-        
+         
         }  
         catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
         
 	}
 
