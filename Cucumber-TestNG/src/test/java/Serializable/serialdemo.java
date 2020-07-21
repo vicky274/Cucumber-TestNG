@@ -12,6 +12,12 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 
 public class serialdemo {
 
@@ -37,14 +43,14 @@ public class serialdemo {
 		College c = new College();
 		c.setStudents(list);
 		
-		
+		System.out.println("-----------------------------Writetojson------------------------------");
         File f = new File("./File/serial.json");
-        
         //write to json file
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         mapper.writeValue(f, c);
         System.out.println("written successfully");
+        
         
         //deserialization 
        /* To de-serialize, we call the readValue() method of the ObjectMapper passing in the 
@@ -52,22 +58,31 @@ public class serialdemo {
         The readValue() method is overloaded to accept other JSON input sources such as byte[], 
         String, URL, File, InputStream etc.*/
         
+        
+        System.out.println("-----------------------------Deserialize the Object------------------------------");
         College c1 = mapper.readValue(f, College.class);
         System.out.println("deserialized successfully "+c1);
-        
-        
-        
-        
-        
+        Gson g = new Gson();
+        String jsonstring = g.toJson(c1);
+        System.out.println(jsonstring);
+        JsonObject jo = new JsonParser().parse(jsonstring).getAsJsonObject();
+    	Gson gso = new GsonBuilder().setPrettyPrinting().create();
+    	System.out.println(gso.toJson(jo));
+    	
+    	
+    	
+    	/*System.out.println("--------------------------Write in Text File---------------------------------");
+        File f1 = new File("./File/serialization.txt");
         //to write in file
-       /* FileOutputStream fi = new FileOutputStream(f);
+        FileOutputStream fi = new FileOutputStream(f1);
         ObjectOutputStream out = new ObjectOutputStream(fi);
         out.writeObject(c);
         out.close();
         fi.close();
-        System.out.println("written successfully");*/
+        System.out.println("written successfully");
         
-       /* //to write in xml file
+        System.out.println("--------------------------Write in XML File---------------------------------");
+        //to write in xml file
 		XMLEncoder XMLEncoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(f)));
 		XMLEncoder.writeObject(c);
 		XMLEncoder.close();

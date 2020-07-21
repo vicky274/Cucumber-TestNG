@@ -22,7 +22,7 @@ public class XMLToJson {
 	 static String line="",str="";
 	public static void main(String[] args) throws IOException {
 		
-		 /*try {
+		 try {
 	         JSONObject json = XML.toJSONObject("./src/main/resources/file3.xml"); // converts xml to json
 	         String jsonPrettyPrintString = json.toString(); // json pretty print
 	         System.out.println(jsonPrettyPrintString);
@@ -38,7 +38,7 @@ public class XMLToJson {
 	            System.out.println(jsonPrettyPrintString);
 	        } catch (JSONException je) {
 	            System.out.println(je.toString());
-	        }*/
+	        }
 		
 		
 		 StringBuilder builder =  new StringBuilder(); 

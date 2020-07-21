@@ -19,31 +19,30 @@ import io.restassured.specification.RequestSpecification;
 
 public class GETrequest {
 
+	/*authentication is the process of verifying who a user is, 
+	while authorization is the process of verifying what they have access to.*/
+	
 	public static void main(String[] args) {
 
 		// Get the RequestSpecification of the request that you want to sent
-				 // to the server. The server is specified by the BaseURI that we have
-				 // specified in the above step.
-		
-		
-		/* RestAssured.baseURI = "https://samples.openweathermap.org/data/2.5";
-		
-		 RequestSpecification httpRequest = RestAssured.given();
-		 Response response = httpRequest.queryParam("q", "London,UK") 
-                 .queryParam("appid", "b6907d289e10d714a6e88b30761fae22") 
-                 .get("/weather");
-	
-		
-		 String responseBody = response.getBody().prettyPrint();
-		 System.out.println("Response Body is =>  " + responseBody);
+		// to the server. The server is specified by the BaseURI that we have
+		// specified in the above step.
+		/*
+		 * RestAssured.baseURI = "https://samples.openweathermap.org/data/2.5";
+		 * 
+		 * RequestSpecification httpRequest = RestAssured.given(); Response
+		 * response = httpRequest.queryParam("q", "London,UK")
+		 * .queryParam("appid", "b6907d289e10d714a6e88b30761fae22")
+		 * .get("/weather");
+		 * 
+		 * String responseBody = response.getBody().prettyPrint();
+		 * System.out.println("Response Body is =>  " + responseBody);
 		 */
-		
-		 
+
 		 RestAssured.baseURI = "https://reqres.in";
 		 RequestSpecification httpRequest = RestAssured.given();
 		 
-		/* ValidatableResponse response1 = httpRequest.get("/api/users?page=2").then()
-				                        .assertThat().body("data.id[0]", equalTo(7)).log().all();*/
+		
 	
 		 Response response = httpRequest.get("/api/users?page=2");
 		 
@@ -73,6 +72,9 @@ public class GETrequest {
 		};
 		 
 
+		//----------------------------------------
+	     ValidatableResponse response1 = httpRequest.get("/api/users?page=2")
+	    		 .then().assertThat().body("data.id[0]", equalTo(7)).log().all();
 	}
 
 }

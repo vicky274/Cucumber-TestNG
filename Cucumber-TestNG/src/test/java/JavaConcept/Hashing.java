@@ -1,4 +1,4 @@
-package demo;
+package JavaConcept;
 
 import java.util.HashMap;
 
@@ -27,7 +27,7 @@ class Employee{
 		this.id=id;
 	}
 
-	@Override
+	/*@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -47,7 +47,7 @@ class Employee{
 		if (id != other.id)
 			return false;
 		return true;
-	}
+	}*/
 
 	//author -vicky
 /*	@Override
@@ -87,16 +87,22 @@ public class Hashing
 		
 		System.out.println(s1==s2); //compares object reference
 		System.out.println(s1.equals(obj2)); //compares two strings are equal
-		
+		System.out.println(obj1==obj2); //compares object reference
 		
 		Employee e1 = new Employee(1);
 		Employee e2 = new Employee(1);
 		Employee e3 = new Employee(2);
+		System.out.println("------------------------------Comparison------------------------------");
+		
+		//When not overrides default implementation produces diff result
+		System.out.println("Hash code e1 :"+e1.hashCode());
+		System.out.println("Hash code e2 :"+e2.hashCode());
+		System.out.println(e1.equals(e2)); //compares two strings are equal
+		
 		
 		
 		  if(e1.hashCode() == e2.hashCode()) 
 	        { 
-	  
 	            if(e1.equals(e2)) {
 	                System.out.println("Both Objects are equal. "); 
 	            }
@@ -108,6 +114,8 @@ public class Hashing
 	        System.out.println("Both Objects are not equal. ");  
 	    }  
 	
+		  
+		  
 		HashMap<Object,String> value = new HashMap<Object,String>();
 		
 		value.put(e1, "vicky");

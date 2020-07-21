@@ -25,12 +25,12 @@ public class FlatMapConcept {
 		 */
 		//Stream over static array won't work so first we need to convert 
 
-		/*String data[][] = new String[][]{{"a","ba"},{"cb","da"},{"e","f"}};
+		String data[][] = new String[][]{{"a","ba"},{"cb","da"},{"e","f"}};
 		
 		
 		Stream<String>  datafilter = Arrays.stream(data).flatMap(x -> Arrays.stream(x)).filter(x -> x.contains("a"));
 		
-		datafilter.forEach(System.out::println);*/
+		datafilter.forEach(System.out::println);
 		
 		
 		

@@ -33,6 +33,17 @@ public class XMLParser {
 		Examine attributes.
 		Examine sub-elements.*/
 		
+		
+		/*In general, new operator is used to create objects, but if we want to decide type of object to be created at runtime, 
+		there is no way we can use new operator. In this case, we have to use newInstance() method.*/
+		
+		  // Create an object of type 'c'  
+		
+       /* Object obj = Class.forName(c).newInstance(); 
+        Class.forName() method return class Class object on which we are calling newInstance() 
+        method which will return the object of that class which we are passing as command line argument.
+        */		
+        		
 		try {
 	         File inputFile = new File("./src/main/resources/file4.xml");
 	         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

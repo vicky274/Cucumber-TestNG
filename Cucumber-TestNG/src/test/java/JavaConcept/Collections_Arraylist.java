@@ -1,4 +1,4 @@
-package demo;
+package JavaConcept;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +17,6 @@ public class Collections_Arraylist {
 		
 		//collection doesnt allow index insertion and it doesnt support sort
 		//Collection<Student> list = new ArrayList<Student>();
-		
 		//so use list
 		List<Student> arraylist = new LinkedList<Student>();
 		arraylist.add(new Student("vignesh", 22));
