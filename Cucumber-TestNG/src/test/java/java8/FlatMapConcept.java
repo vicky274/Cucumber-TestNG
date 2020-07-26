@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
+import java.util.function.DoubleConsumer;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -68,11 +70,17 @@ public class FlatMapConcept {
 		
 		
 		//for primitive type  use flatmaptoint Method
-		int[] a ={1,2,3,4,5,6};
+	/*	int[] a ={1,2,3,4,5,6};
 		Stream<int[]>  datastream = Stream.of(a);	
 		IntStream filterdata  =datastream.flatMapToInt(x-> Arrays.stream(x)).distinct();
 		
-		filterdata.forEach(System.out::println);
+		filterdata.forEach(System.out::println);*/
+		
+		//Convert string to int array
+		
+		String[] s = new String[]{"7","2","3"};
+		Arrays.stream(s).mapToInt(Integer::valueOf).sorted().average().ifPresent(System.out::println);
+		
 	}
 
 }

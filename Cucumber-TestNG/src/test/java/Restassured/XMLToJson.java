@@ -18,12 +18,14 @@ import org.json.JSONObject;
 
 public class XMLToJson {
 
-	 public static int PRETTY_PRINT_INDENT_FACTOR = 4;
-	 static String line="",str="";
+	 private static final int PRETTY_PRINT_INDENT_FACTOR = 4;
+	 private static String link="./src/main/resources/file3.xml";
+	 private static String line="",str="";
+	 
 	public static void main(String[] args) throws IOException {
 		
 		 try {
-	         JSONObject json = XML.toJSONObject("./src/main/resources/file3.xml"); // converts xml to json
+	         JSONObject json = XML.toJSONObject(link); // converts xml to json
 	         String jsonPrettyPrintString = json.toString(); // json pretty print
 	         System.out.println(jsonPrettyPrintString);
 	      } catch(JSONException je) {
@@ -33,7 +35,7 @@ public class XMLToJson {
 		 
 		 
 		 try {
-	            JSONObject xmlJSONObj = XML.toJSONObject("./src/main/resources/file3.xml");
+	            JSONObject xmlJSONObj = XML.toJSONObject(link);
 	            String jsonPrettyPrintString = xmlJSONObj.toString(PRETTY_PRINT_INDENT_FACTOR);
 	            System.out.println(jsonPrettyPrintString);
 	        } catch (JSONException je) {
@@ -41,27 +43,37 @@ public class XMLToJson {
 	        }
 		
 		
-		 StringBuilder builder =  new StringBuilder(); 
-		 //Convert xml file data to json format
-		 String link = "./src/main/resources/file3.xml";
 		 
-	        BufferedReader br = new BufferedReader(new FileReader(link));
-	        while ((line = br.readLine()) != null) 
-	        {   
-	        	System.out.println(line);
-	        	builder.append(line);
-	        	
-	            //str+=StringEscapeUtils.unescapeJava(line);  
-	        }
-	        JSONObject jsondata = XML.toJSONObject(builder.toString());
-	       
-	        //System.out.println(jsondata.toString(PRETTY_PRINT_INDENT_FACTOR));
-	    
-	    	Gson gso = new GsonBuilder().setPrettyPrinting().create();
-	    	String jsonstring = gso.toJson(jsondata);
-	    	
-	    	System.out.println(StringEscapeUtils.unescapeJava(jsonstring));
 		   
+	}
+	
+	public void ReadXMLFileToConvertJsonObject(){
+		StringBuilder builder =  new StringBuilder(); 
+		 //Convert xml file data to json format
+	        try {
+				BufferedReader br = new BufferedReader(new FileReader(link));
+				while ((line = br.readLine()) != null) 
+				{   
+					System.out.println(line);
+					builder.append(line);
+					
+				    //str+=StringEscapeUtils.unescapeJava(line);  
+				}
+				JSONObject jsondata = XML.toJSONObject(builder.toString());
+      
+				//System.out.println(jsondata.toString(PRETTY_PRINT_INDENT_FACTOR));
+   
+				Gson gso = new GsonBuilder().setPrettyPrinting().create();
+				String jsonstring = gso.toJson(jsondata);
+				
+				System.out.println(StringEscapeUtils.unescapeJava(jsonstring));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (JSONException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 	}
 
 }

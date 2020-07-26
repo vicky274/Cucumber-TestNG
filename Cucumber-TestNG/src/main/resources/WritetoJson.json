@@ -1,0 +1,28 @@
+[
+  {
+    "employee1": {
+      "Address": "Chennai",
+      "FirstName": "Vignesh",
+      "company": [
+        {
+          "Company3": "Google",
+          "Company1": "Facebook",
+          "Company2": "PayPal"
+        }
+      ],
+      "LastName": "Elangovan"
+    },
+    "employee2": {
+      "Address": "Vellore",
+      "FirstName": "Lokesh",
+      "company": [
+        {
+          "Company3": "Google",
+          "Company1": "Facebook",
+          "Company2": "PayPal"
+        }
+      ],
+      "LastName": "Gupta"
+    }
+  }
+]

@@ -68,7 +68,7 @@ public class Hashmapsortbyvalue {
        for (Map.Entry<String, Integer> en : hm1.entrySet()) { 
 	        list.add(en.getValue());
         } 
-        list.stream().sorted((o1,o2)->  o1.compareTo(02)).forEach(System.out::println);
+        list.stream().sorted((o1,o2)->  o1.compareTo(o2)).forEach(System.out::println);
 
         Map<String, Integer> sorted = hm
                 .entrySet()
@@ -77,7 +77,7 @@ public class Hashmapsortbyvalue {
                 .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2,
                         LinkedHashMap::new));
 
-            System.out.println("------map after sorting by values:------- ");
+           System.out.println("-----------------------map after sorting by values:---------------------------- ");
            sorted.forEach(new BiConsumer<String, Integer>(){
 
 					@Override

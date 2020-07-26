@@ -88,7 +88,7 @@ public class ReadJson {
 			}
 		}
 	
-	/*//read using org.json........................................................................................
+	//read using org.json........................................................................................
 	public static void readjsonfromfile() {
 		System.out.println("----------------------------Read using org.json Library----------------------------------");
 		// JSON parser object to parse read file
@@ -109,6 +109,6 @@ public class ReadJson {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}*/
+	}
 	
 }

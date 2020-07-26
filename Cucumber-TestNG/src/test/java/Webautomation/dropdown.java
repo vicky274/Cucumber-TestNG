@@ -51,10 +51,8 @@ static WebDriver driver;
 		//A Collector encapsulates the functions used as arguments to collect(Supplier, BiConsumer, BiConsumer), allowing for reuse of collection 
 		//strategies and composition of collect operations such as multiple-level grouping or partitioning. 
 		
-		System.out.println(list.stream().distinct()
-				.collect(Collectors.toList()));
-		System.out.println(list.stream().filter(e -> Collections.frequency(list, e)>1)
-				.distinct().collect(Collectors.toList()));
+		System.out.println(list.stream().distinct().collect(Collectors.toList()));
+		System.out.println(list.stream().filter(e -> Collections.frequency(list, e)>1).distinct().collect(Collectors.toList()));
 		
 		/*List<String> duplicate = new ArrayList<String>();
 		Set<String>  set = new HashSet<String>(list);

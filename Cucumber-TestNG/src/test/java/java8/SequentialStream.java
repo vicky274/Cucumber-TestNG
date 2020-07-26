@@ -40,9 +40,8 @@ public class SequentialStream {
           IntStream.concat(IntStream.range(1, 6), IntStream.range(6, 11)).forEach(System.out::println);*/
           
          //double to String
-         // Stream.of(1.0,2.0,3.0).mapToInt(Double::intValue).mapToObj(i-> "a"+i).forEach(System.out::println);
+          Stream.of(1.0,2.0,3.0).mapToInt(Double::intValue).mapToObj(i-> "a"+i).forEach(System.out::println);
          
-          
           //iterate limit
           //Stream.iterate(0, n -> n+1).limit(10).forEach(System.out::println);
           

@@ -64,7 +64,7 @@ public class Mapdemo {
         //3. jsonString to JSONObject in Java using Gson
        /* JsonObject obj = new JsonParser().parse(payload).getAsJsonObject();
         System.out.println(obj);*/
-        /*
+        
 		  Map<String, Object> netAmount = new HashMap<String, Object>();
 		  Map<String,String> map1 = new LinkedHashMap<String,String>();
 		  map1.put("amount", "10");
@@ -85,7 +85,7 @@ public class Mapdemo {
 		  
 	      Gson gson1 = new GsonBuilder().setPrettyPrinting().create();
 	      String jsonOutput = gson1.toJson(hashmap);
-	      System.out.println(jsonOutput);*/
+	      System.out.println(jsonOutput);
 	    
 /*		[
 		  {
@@ -102,7 +102,7 @@ public class Mapdemo {
 		  }
 		]
 */
-		List<Object> list1 = new ArrayList<Object>();
+		/*List<Object> list1 = new ArrayList<Object>();
 		
 		Address Address = new Address();
 		Address.setCountry("india");
@@ -123,7 +123,7 @@ public class Mapdemo {
 	     Gson gson1 = new GsonBuilder().setPrettyPrinting().create();
 	     String jsonOutput = gson1.toJson(list1);
 	     System.out.println(jsonOutput);
-	      
+	      */
 	}
 
 }

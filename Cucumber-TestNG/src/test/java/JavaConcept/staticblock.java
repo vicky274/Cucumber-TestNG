@@ -28,7 +28,7 @@ public class staticblock {
 }
 	
 	public static void main(String[] args) {
-		staticblock b = new staticblock();
+		staticblock b = new B();
 
 	}
 }
