@@ -1,6 +1,7 @@
 package JavaConcept;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 class Employee{
 	/**
@@ -27,7 +28,7 @@ class Employee{
 		this.id=id;
 	}
 
-	/*@Override
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -47,7 +48,7 @@ class Employee{
 		if (id != other.id)
 			return false;
 		return true;
-	}*/
+	}
 
 	//author -vicky
 /*	@Override
@@ -77,6 +78,7 @@ public class Hashing
 
 	public static void main(String[] args) 
 	{
+		//String class overrides Object class hashcode and equals method
 		String obj1 = new String("hello");
 		String obj2 = new String("hello");
 		
@@ -88,6 +90,7 @@ public class Hashing
 		System.out.println(s1==s2); //compares object reference
 		System.out.println(s1.equals(obj2)); //compares two strings are equal
 		System.out.println(obj1==obj2); //compares object reference
+		System.out.println(obj1.equals(obj2));
 		
 		Employee e1 = new Employee(1);
 		Employee e2 = new Employee(1);
@@ -114,8 +117,13 @@ public class Hashing
 	        System.out.println("Both Objects are not equal. ");  
 	    }  
 	
-		  
-		  
+		  //checking in set
+		  HashSet < Employee > Employee = new HashSet < Employee > ();
+		  Employee.add(e1);
+		  Employee.add(e2);
+		  System.out.println("HashSet size = " + Employee.size());
+	        
+		  //checking in map
 		HashMap<Object,String> value = new HashMap<Object,String>();
 		
 		value.put(e1, "vicky");

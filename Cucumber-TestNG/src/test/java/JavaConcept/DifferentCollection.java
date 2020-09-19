@@ -1,6 +1,7 @@
 package JavaConcept;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -12,7 +13,10 @@ public class DifferentCollection {
 		List<Integer> lis = new ArrayList<Integer>();
 		lis.add(24);lis.add(25);
 		
-		List<String> li = new ArrayList<String>();
+		String[] s = new String[]{"45","23","33"};
+		Arrays.sort(s);
+		System.out.println(s[0]);
+		List<String> li = new ArrayList<String>(Arrays.asList(s));
 		li.add("324");
 		li.add("466");
 		li.add("778");

@@ -22,7 +22,7 @@ public class Horizontalscroll {
 	public static void main(String[] args) throws IOException, InterruptedException {
 
 		service = new ChromeDriverService.Builder()
-		.usingDriverExecutable(new File("./Jar/chromedriver.exe")).usingAnyFreePort().withSilent(true).build();
+		.usingDriverExecutable(new File("./Jar/chromedriver_84.exe")).usingAnyFreePort().withSilent(true).build();
 		service.start();
 		driver = new ChromeDriver(service);
 		
@@ -33,7 +33,13 @@ public class Horizontalscroll {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		
 		//scroll to element and Element click
-		WebElement ele =driver.findElement(By.xpath("//a[text()='Work']"));
+		WebElement ele=null;
+		try {
+			ele = driver.findElement(By.xpath("//a[text()='Work']"));
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 		//js.executeScript("arguments[0].scrollIntoView();", ele);
 		//js.executeScript("arguments[0].click();", ele);
 		/*Actions action = new Actions(driver);

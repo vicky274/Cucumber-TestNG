@@ -22,6 +22,9 @@ public class GETrequest {
 	/*authentication is the process of verifying who a user is, 
 	while authorization is the process of verifying what they have access to.*/
 	
+	//for Errorcode refer this link
+	//http://dcx.sap.com/1200/en/dbprogramming/errors-http.html
+	
 	public static void main(String[] args) {
 
 		// Get the RequestSpecification of the request that you want to sent
@@ -41,7 +44,6 @@ public class GETrequest {
 
 		 RestAssured.baseURI = "https://reqres.in";
 		 RequestSpecification httpRequest = RestAssured.given();
-		 
 		
 	
 		 Response response = httpRequest.get("/api/users?page=2");
@@ -57,7 +59,7 @@ public class GETrequest {
 		 List<String> list = response.jsonPath().getList("data.email");
 		 
 		 for(String li : list){
-			 System.out.println(li);
+			 System.out.println(li);	
 		 }
 		
 		 List<HashMap<String,Object>>booksList=response.jsonPath().getList("data");
@@ -74,7 +76,7 @@ public class GETrequest {
 
 		//----------------------------------------
 	     ValidatableResponse response1 = httpRequest.get("/api/users?page=2")
-	    		 .then().assertThat().body("data.id[0]", equalTo(7)).log().all();
+	    		 .then().assertThat().statusCode(200).body("data.id[0]", equalTo(7)).log().all();
 	}
 
 }

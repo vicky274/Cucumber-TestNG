@@ -2,12 +2,14 @@ package Webautomation;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
+import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,20 +27,20 @@ public class Fluentwait {
 	
 	public static void main(String[] args) throws IOException {
 		
-		/*Using IOUtils.toString (Apache Utils)
+		//Using IOUtils.toString (Apache Utils)
 
-		String result = IOUtils.toString(inputStream, StandardCharsets.UTF_8);*/
+		//String result = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
 		
 		
-		/*String[] values = {"AB","BC","CD","AE"};
+		String[] values = {"AB","BC","CD","AE"};
 		boolean contains = Arrays.stream(values).anyMatch("a"::equals);
 		System.out.println(contains);
 		
 		int[] i={1,2,3,4};
 		boolean s = IntStream.of(i).anyMatch(x -> x == 5);
-		System.out.println(s);*/
+		System.out.println(s);
 		
-		service = new ChromeDriverService.Builder()
+		/*service = new ChromeDriverService.Builder()
 		.usingDriverExecutable(new File("./Jar/chromedriver.exe")).usingAnyFreePort().withSilent(true).build();
 		service.start();
 		driver = new ChromeDriver(service);
@@ -58,7 +60,7 @@ public class Fluentwait {
         .pollingEvery(Duration.ofMillis(500))
         .ignoring(NoSuchElementException.class);
 
-         wait.until((input) ->{return driver.findElement(By.xpath("//p[@id='demo']"));});
+         wait.until((input) ->{return driver.findElement(By.xpath("//p[@id='demo']"));});*/
          
          /*long t2=System.currentTimeMillis();
          long t3=t2-t1;
@@ -66,7 +68,7 @@ public class Fluentwait {
 		
 		
 
- 		/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+ 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
  			       .withTimeout(Duration.ofSeconds(10))
  			       .pollingEvery(Duration.ofSeconds(500))
  			       .ignoring(NoSuchElementException.class);
@@ -81,7 +83,7 @@ public class Fluentwait {
  			
  		};
  		
- 		wait.until(func);*/
+ 		wait.until(func);
 	}
 
 }

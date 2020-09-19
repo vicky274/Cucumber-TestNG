@@ -18,16 +18,17 @@ package Enum;
 	{
 		
 		APPLE(1000),SAMSUNG(2000),ONEPLUS;
-		int price;
+		private final int price;
 		
 		Mobile(){
 			price=80;
-			System.out.println("Constructor");
+			System.out.println("Explicit Constructor :"+price);
 		}
 		
 		Mobile(int p){
+			
 			price=p;
-			System.out.println(p);
+			System.out.println("Paramaterized Constructor: "+p);
 		}
 		public int getprice(){
 			
@@ -41,16 +42,22 @@ public class Enum {
 	
 	public static void main(String[] args) {
 		
-		/*Mobile m = Mobile.SAMSUNG;
+		Mobile m1 = Mobile.SAMSUNG;
+	
 		
-		switch(m){
+		switch(m1){
 		case SAMSUNG:
 			System.out.println("samsung mobile");
 			break;
-		}*/
+		}
+		
+		System.out.println("The price is :"+m1.getprice());
 		
 		//System.out.println(Mobile.APPLE.getprice());
         System.out.println(Mobile.valueOf("APPLE"));
+        System.out.println(Mobile.valueOf("ONEPLUS"));
+        System.out.println(Mobile.valueOf("SAMSUNG"));
+   
 		Mobile[] val = Mobile.values();
 		
 		for(Mobile m:val){

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.text.StringEscapeUtils;
 
 import com.google.common.html.HtmlEscapers;
 
@@ -69,7 +69,15 @@ public class Stringformat {
 		//List<String> filterlist = list.stream().filter((String t) -> t.contains("<")).map(x -> x.split("<")[1].replaceAll("\\W+", "").trim()).peek(System.out::println).collect(Collectors.toList());
         
 		//unescape html code - commons-lang.jar
-		String unescaped = StringEscapeUtils.unescapeHtml("address1 189, &lt;12334&gt;");
+		
+		//String ss="&amp;nbsp; &amp;nbsp;";
+		String ss = StringEscapeUtils.unescapeHtml3("&amp;nbsp; &amp;nbsp;");
+		System.out.println(ss.replaceAll("&"+"nbsp;", " ")); 
+		
+		
+		System.out.println(StringEscapeUtils.unescapeJava("\\u00A0"));
+		
+		String unescaped = StringEscapeUtils.unescapeHtml4("address1 189, &lt;12334&gt;");
 		System.out.println(unescaped);
 		
 		

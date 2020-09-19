@@ -6,26 +6,24 @@ public class Whilewait {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		long start = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
-		
+		/*long start = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
+		System.out.println(start);
 		Thread.sleep(5000);
 		
 		long current = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis());
+		System.out.println(current);*/
 		
 		
-		
-		// do stuff
-		System.out.println(current-start);
-		
-		/*int wait=5;
-	
-		   while(wait<seconds){
-		        
-		
-			   
-		   }*/
-		   
-		
+		long start_time = System.currentTimeMillis();
+		System.out.println(start_time);
+		long wait_time = 10000;
+		long end_time = start_time + wait_time;
+
+		while (System.currentTimeMillis() < end_time) {
+		 
+			Thread.sleep(1000);
+			System.out.println("inside loop");
+		}
 
 	}
 

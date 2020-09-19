@@ -1,9 +1,9 @@
 package Customer;
 
-public class ImmutableClass {
+public final class ImmutableClass {
 
 	
-	final String pancardNumber;  
+	private final String pancardNumber;  
 	  
 	public ImmutableClass(String pancardNumber){  
 	this.pancardNumber=pancardNumber;  

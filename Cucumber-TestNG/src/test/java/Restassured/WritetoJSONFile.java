@@ -88,7 +88,7 @@ public class WritetoJSONFile {
 			
 			JSONArray employeeList = new JSONArray();
 	        employeeList.add(employee);
-	        
+	        //The GSON JsonParser class can parse a JSON string or stream into a tree structure of Java objects.
 	        JSONArray j = (JSONArray) new JSONParser().parse(employeeList.toJSONString());
 	        
 	        Gson gson = new GsonBuilder().setPrettyPrinting().create(); // pretty print

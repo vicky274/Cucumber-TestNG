@@ -23,18 +23,26 @@ JDK 1.5 or higher provides with ConcurrentHashMap and CopyOnWriteArrayList class
 		int[] a = new int[]{1,2,3};
 		System.out.println(a[3]);*/
 		
-		/*
+		
 		//Numberformat Exception
 		String s="vicky";
-	    int i = Integer.parseInt(s);*/
+	    int i = Integer.parseInt(s);
+		
 		
 		//classcast Exception
 		/**
 		 * Thrown to indicate that the code has attempted to cast an object to a subclass of which it is not an instance. 
 		 * For example, the following code generates a ClassCastException:
 		 */
-		 /*Object x = new Integer(0);
-	     System.out.println((String)x);*/
+		
+		Object x = new String("abc");
+	     System.out.println((Integer)x);
+	     
+	     
+		 Object x1 = new Integer(0);
+		 if(x1 instanceof String)
+	     System.out.println((String)x1);
+	}
 	     
 	     //ConcurrentModificationException
 	     /**
@@ -43,47 +51,51 @@ JDK 1.5 or higher provides with ConcurrentHashMap and CopyOnWriteArrayList class
 	      * when it is not permissible. This exception usually comes when one is working with Java Collection 
 	      * classes.
 	      */
-	     
+	    /* 
 	      List<String>  list = new ArrayList<String>();
 	      list.add("space");
 	      list.add("air");
 	      list.add("land");
 	      list.add("water");
 	      list.add("fire");
-	     /* 
-	     Iterator<String> itr =list.iterator();
+	     
+	    Iterator<String> itr =list.iterator();
 	      
 	      while(itr.hasNext()){
 	    	  String s = itr.next();
 	    	  System.out.println(s);
-	    	  //itr.remove();
-	    	  list.remove(0);
-	      }*/
+	    	  itr.remove();
+	    	  //list.remove(0);
+	      }
 	      
-	      //reverse direction
-	      //Collections.reverse(list);
-	      /*ListIterator<String> listitr =list.listIterator(list.size());
+	      System.out.println("After removal :"+ list);
+	      */
+	     /* //reverse direction
+	      Collections.reverse(list);
+	      System.out.println(list);
+	      
+	      ListIterator<String> listitr =list.listIterator(list.size());
 	      
 	      while(listitr.hasPrevious()){
 	    	  
 	    	  String s = listitr.previous();
 	    	  System.out.println(s);
-	    	 // listitr.add(e);
+	    	  //listitr.add("vicky");
 	    	 // listitr.set(e);
 	      }
-	      System.out.println(list);*/
+	      */
 	      
 	      //Java.lang.NullPointer Exception
-	      try{
+	      /*try{
 	  		String str=null;
 	  		System.out.println (str.length());
 	  	}
 	          catch(NullPointerException e){
 	  		System.out.println("NullPointerException..");
-	  	}
+	  	}*/
 	      
 	      //StringindexoutofBound Exception
-	      try{
+	      /*try{
 	    		 String str="beginnersbook";
 	    		 System.out.println(str.length());;
 	    		 char c = str.charAt(0);
@@ -91,7 +103,7 @@ JDK 1.5 or higher provides with ConcurrentHashMap and CopyOnWriteArrayList class
 	    		 System.out.println(c);
 	    	      }catch(StringIndexOutOfBoundsException e){
 	    		  System.out.println("StringIndexOutOfBoundsException!!");
-	    	       }
-	}
+	    	       }*/
+	//}
 
 }

@@ -2,6 +2,17 @@ package ScreenshotCode;
 
 public class javascriptcode {
 
+	/*  how-to-read-text-from-hidden-element-with-selenium-webdriver
+	 * 
+	    Might be useful as well:
+
+		In some cases, one may find it useful to get the hidden text, which can be retrieved from element's 
+		textContent, innerText or innerHTML attribute, by calling element.attribute('attributeName').
+
+		element.getAttribute("textContent") worked for me.*/
+		
+		
+		
     //*************to type text in Selenium WebDriver without using sendKeys() method
     //js.executeScript("document.getElementById('some id').value='someValue';");
     //js.executeScript("document.getElementById('Email').value='SoftwareTestingMaterial.com';");*/

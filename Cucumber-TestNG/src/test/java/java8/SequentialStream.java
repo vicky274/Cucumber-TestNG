@@ -1,6 +1,8 @@
 package java8;
 
 import java.util.Arrays;
+import java.util.PrimitiveIterator.OfInt;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -9,9 +11,13 @@ public class SequentialStream {
 
 	public static void main(String[] args) {
 
+		 
+		  System.out.println( String.format("%04d", new Random().nextInt(10000)));
+		  
           Stream<String> stream =  Stream.of("a1","a2","a3");
 
           stream.findFirst().ifPresent(System.out::println);
+          
           
           
           //primitives

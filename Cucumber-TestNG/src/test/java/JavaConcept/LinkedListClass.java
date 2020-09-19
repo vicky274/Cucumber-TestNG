@@ -32,7 +32,9 @@ public class LinkedListClass {
 		arraylist.addLast(5);
 		arraylist.stream().iterator().forEachRemaining(System.out::println);
 		
-		
+		for(int i=0; i<arraylist.size();i++){
+			System.out.println(arraylist.get(i));
+		}
 	}
 
 }

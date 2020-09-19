@@ -48,14 +48,14 @@ public class AnonymousInnerClass {
 		
 		Comparator<Integer> com=(x,y)-> {
 			
-			return (x%10>y%10)?-1:(x%10==y%10)?0:1;
+			return (x%10>y%10)?1:(x%10==y%10)?0:-1;
 			
 		};
 			
 		Collections.sort(list,com);
 		//Collections.reverse(list);
 		
-		//list.forEach(System.out::println);
+		list.forEach(System.out::println);
 
 		
 		
