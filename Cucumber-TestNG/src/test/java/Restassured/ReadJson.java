@@ -16,14 +16,13 @@ import com.google.gson.JsonParser;
 public class ReadJson {
 
 	public static void main(String[] args) {
-		//readjson();
-		//readjsonstring();
+		
 		//readjsonfromfile();
-		readjsonfromfileusingGson();
+		//readjsonfromfileusingGson();
     }
 	
 	
-	public static void readjson(){
+	public static void readjson_usingSimpleJson(){
 		//JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
          
@@ -36,7 +35,7 @@ public class ReadJson {
             if(obj instanceof JSONObject){
             JSONObject JSONObject = (JSONObject)obj;
             String jsonOutput = gso.toJson(JSONObject);
-            System.out.println(jsonOutput);
+            System.out.println("Json Object : "+jsonOutput);
             }
             else{
             	JSONArray employeeList = (JSONArray) obj;
@@ -50,46 +49,9 @@ public class ReadJson {
         }
 	}
 	
-	public static void readjsonstring(){
-		String payload = "{\n" +
-		        "  \"description\": \"Some Description\",\n" +
-		        "  \"id\": \"Some id\",\n" +
-		        "  \"name\": \"Some name\"\n" +
-		        "}";
-		
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		JsonObject obj = new JsonParser().parse(payload).getAsJsonObject();
-		System.out.println(gson.toJson(obj));
-		
-		JsonElement ele = obj.get("description");
-		System.out.println(ele.toString());
-	}
-
-	//read using Gson........................................................................................
-		public static void readjsonfromfileusingGson() {
-			System.out.println("----------------------------Read using GSON Library----------------------------------");
-			// JSON parser object to parse read file
-			JsonParser jsonParser = new JsonParser();
-
-			try (FileReader reader = new FileReader("./src/main/resources/ValidateJsonInFile2.json")) {
-				Gson gso = new GsonBuilder().setPrettyPrinting().create();
-				// Read JSON file
-				JsonObject jsonobject = jsonParser.parse(reader).getAsJsonObject();
-				System.out.println("Data in File:\n " + gso.toJson(jsonobject));
-				
-				JsonArray jsonarray = (JsonArray) jsonobject.get("weather");
-				
-				for (int i = 0; i < jsonarray.size(); i++) {
-					JsonElement jsonobjec = jsonarray.get(i);
-					System.out.println("JsonElement:\n " + gso.toJson(jsonobjec));
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
 	
 	//read using org.json........................................................................................
-	public static void readjsonfromfile() {
+	public static void readjsonfromfile_UsingOrgJson() {
 		System.out.println("----------------------------Read using org.json Library----------------------------------");
 		// JSON parser object to parse read file
 		JSONParser jsonParser = new JSONParser();

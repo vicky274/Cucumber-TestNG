@@ -1,7 +1,12 @@
 package Regex;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Regexdemo {
 
+	public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
+		    Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 	
 /*	The Java Regex or Regular Expression is an API to define a pattern for searching or manipulating strings.
 
@@ -19,9 +24,18 @@ public class Regexdemo {
 	6	[a-z&&[^bc]]	a through z, except for b and c: [ad-z] (subtraction)
 	7	[a-z&&[^m-p]]	a through z, and not m through p: [a-lq-z](subtraction)*/
 	
+
+	public static boolean validate(String emailStr) {
+	        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
+	        
+	        System.out.println(emailStr+" - "+matcher.find());
+	        return matcher.find();
+	}
+	
 	
 	public static void main(String[] args) {
 		
+		validate("vimessi2@gmail.com");
         String ss="            ";
         System.out.println(ss.matches("\\s+"));
 		 
@@ -102,5 +116,7 @@ System.out.println(temp);
 
         System.out.println("Smallest Number :"+temp);*/
 	}
+	
+
 
 }

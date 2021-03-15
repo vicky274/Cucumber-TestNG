@@ -28,7 +28,8 @@ public class XMLParser {
 		Create a DocumentBuilder.
 		Create a Document from a file or stream.
 		Create an Xpath object and an XPath path expression.
-		Compile the XPath expression using XPath.compile() and get a list of nodes by evaluating the compiled expression via XPath.evaluate().
+		Compile the XPath expression using XPath.compile() and 
+		get a list of nodes by evaluating the compiled expression via XPath.evaluate().
 		Iterate over the list of nodes.
 		Examine attributes.
 		Examine sub-elements.*/

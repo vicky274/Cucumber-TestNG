@@ -24,6 +24,23 @@ import com.google.gson.JsonParser;
 
 public class serialdemo {
 	static Gson g = new Gson();
+	
+	/*{
+		  "students": [
+		    {
+		      "rollno": 1,
+		      "name": "vicky"
+		    },
+		    {
+		      "rollno": 2,
+		      "name": "vignesh"
+		    },
+		    {
+		      "rollno": 3,
+		      "name": "deep"
+		    }
+		  ]
+		}*/
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		
 		Student s1 = new Student();
@@ -45,6 +62,9 @@ public class serialdemo {
 		
 		College c = new College();
 		c.setStudents(list);
+		
+		String J = g.toJson(c);
+        System.out.println(J);
 		
 		System.out.println("-----------------------------Writetojson------------------------------");
         File f = new File("./File/serial.json");
@@ -71,7 +91,7 @@ public class serialdemo {
         System.out.println(jsonstring);
         JsonObject jo = new JsonParser().parse(jsonstring).getAsJsonObject();
     	Gson gso = new GsonBuilder().setPrettyPrinting().create();
-    	System.out.println(gso.toJson(jo));
+    	System.out.println("JSON RESPONSE :"+gso.toJson(jo));
     	
     	
         System.out.println("-----------------------------Deserialize using Gson------------------------------");

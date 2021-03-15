@@ -8,6 +8,9 @@ import org.json.simple.JSONObject;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
@@ -48,7 +51,14 @@ public class GETrequest {
 	
 		 Response response = httpRequest.get("/api/users?page=2");
 		 
-		 response.getBody().prettyPrint();
+		 String res = response.getBody().asString();
+		 
+		 
+			JsonObject ob = new JsonParser().parse(res).getAsJsonObject();
+			System.out.println("Json Object :"+ob);
+			
+			
+		// response.getBody().prettyPrint();
 		 
 		 Object obj = response.jsonPath().getJsonObject("ad");
 		 System.out.println(obj);

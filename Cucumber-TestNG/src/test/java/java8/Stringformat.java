@@ -3,8 +3,10 @@ package java8;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringEscapeUtils;
 
 import com.google.common.html.HtmlEscapers;
@@ -13,11 +15,26 @@ public class Stringformat {
 
 	public static void main(String[] args) {
 		
+		//This will normalize the spacing to single and will strip off the starting and trailing whitespaces as well.
+		String text = StringUtils.normalizeSpace("this is     used to normalize space");
+		System.out.println(text);
+		
+		String tex="this is     used to normalize space";
+		
+		//another way
+		System.out.println(tex.replaceAll("\\s{2,}", " "));
+		
+		//another way
+		String repl = Pattern.compile("\\s{2,}").matcher(tex).replaceAll(" ");
+		System.out.println(repl);
+		
+		
+		
+		
+		
 		long a=000000111;
 		
 		System.out.println(String.format("%1d", a));
-
-		
 
         int num = 7044; 
   
